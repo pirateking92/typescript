@@ -8,28 +8,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var readline = require("readline");
 var r1 = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
 });
-r1.question('Please enter a number to fizzbuzz: ', function (input) {
+r1.question("Please enter a number to fizzbuzz up to: ", function (input) {
     var num = parseInt(input);
     fizzbuzz(num);
     r1.close();
 });
 function fizzbuzz(n) {
-    var divBy3;
-    var divBy5;
-    var i;
-    var output;
-    for (i = 1; i <= 100; i += 1) {
-        output = '';
-        divBy3 = !(i % 3);
-        divBy5 = !(i % 5);
-        if (divBy3)
-            output += 'Fizz';
-        if (divBy5)
-            output += 'Buzz';
-        if (!(divBy3) || divBy5)
-            output = i.toString();
-        console.log(output);
+    if (n == 0) {
+        return 0;
     }
+    if (n % 3 == 0 && n % 5 == 0) {
+        return "fizzbuzz";
+    }
+    if (n % 3 == 0) {
+        return "fizz";
+    }
+    if (n % 5 == 0) {
+        return "buzz";
+    }
+    console.log(n);
 }
