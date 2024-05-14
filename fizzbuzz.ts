@@ -18,17 +18,11 @@ r1.question("Please enter a number to fizzbuzz up to: ", (input) => {
 });
 
 function fizzbuzz(n: number) {
-  if (n == 0) {
-    return 0;
+  for (let i = 1; i <= n; i++) {
+    let output = "";
+    if (i % 3 === 0) output += "Fizz";
+    if (i % 5 === 0) output += "Buzz";
+    if (output === "") output = i.toString();
+    console.log(output);
   }
-  if (n % 3 == 0 && n % 5 == 0) {
-    return "fizzbuzz";
-  }
-  if (n % 3 == 0) {
-    return "fizz";
-  }
-  if (n % 5 == 0) {
-    return "buzz";
-  }
-  console.log(n);
 }

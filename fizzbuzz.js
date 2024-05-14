@@ -16,17 +16,14 @@ r1.question("Please enter a number to fizzbuzz up to: ", function (input) {
     r1.close();
 });
 function fizzbuzz(n) {
-    if (n == 0) {
-        return 0;
+    for (var i = 1; i <= n; i++) {
+        var output = "";
+        if (i % 3 === 0)
+            output += "Fizz";
+        if (i % 5 === 0)
+            output += "Buzz";
+        if (output === "")
+            output = i.toString();
+        console.log(output);
     }
-    if (n % 3 == 0 && n % 5 == 0) {
-        return "fizzbuzz";
-    }
-    if (n % 3 == 0) {
-        return "fizz";
-    }
-    if (n % 5 == 0) {
-        return "buzz";
-    }
-    console.log(n);
 }
